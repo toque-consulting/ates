@@ -1,0 +1,79 @@
+/* Mail Form PlaceHolder
+========================================================*/
+@mixin placeholder-fade-up() {
+  *:-webkit-autofill ~ & {
+    opacity: .4;
+    @include transform(translateY(-80%));
+  }
+
+  &.state-1 {
+    opacity: .4;
+    @include transform(translateY(-75%));
+  }
+}
+
+@mixin placeholder-fade-left() {
+  *:-webkit-autofill ~ & {
+    opacity: .4;
+    @include transform(translateX(-100%));
+  }
+
+  &.state-1 {
+    opacity: .4;
+    @include transform(translateX(-100%));
+  }
+
+  @media (max-width: 1365px) {
+    .container > .mailform &,
+    .grid_12 & {
+      @include placeholder-fade-up;
+    }
+  }
+
+  @media (max-width: 979px) {
+    .grid_10 & {
+      @include placeholder-fade-up();
+    }
+  }
+
+  @media (max-width: 767px) {
+    @include placeholder-fade-up();
+  }
+}
+
+@mixin placeholder-fade() {
+  *:-webkit-autofill ~ & {
+    opacity: .4;
+  }
+
+  &.state-1 {
+    opacity: .4;
+  }
+
+  *:-webkit-autofill ~ &{
+    display: none;
+  }
+  .mfInput.filled &.state-1{
+    display: none;
+  }
+}
+
+.mfPlaceHolder {
+  font-size: 20px;
+  cursor: text;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: $input-padding-place-holder;
+  line-height: $input-line-height;
+  color: $placeholder-clr;
+  opacity: $placeholder-opacity;
+  @include placeholder-fade();
+  @include transition(.3s all ease);
+}
+
+textarea ~ .mfPlaceHolder {
+  position: absolute;
+  top: -35px;
+  left: 0;
+}

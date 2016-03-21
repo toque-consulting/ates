@@ -1,0 +1,974 @@
+@charset "utf-8";
+@import "_mixins.scss";
+@import "_variables.scss";
+@import "animate.css";
+
+// Fonts
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,700,500);
+
+$scheme: nth($schemes,1);
+/*========================================================
+                      Main Styles
+=========================================================*/
+body {
+    font: 300 16px/24px $default-font;
+    -webkit-text-size-adjust: none;
+    background: #2a2d2d url(../images/body_bg-1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;    
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-md-min - 1) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $screen-md-min) {
+        padding-bottom: 126px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6, 
+.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+    color: $secondary-color;
+    line-height: 1.2;
+}
+
+h1, .heading-1{
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -1.8px;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-sm-min) {
+        font-size: 50px;
+        line-height: 63px;
+    }
+}
+
+h2, .heading-2{ 
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+h3, .heading-3{
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.52px;
+    text-transform: uppercase;
+}
+
+h4, .heading-4{
+    font-size: 22px;
+}
+
+h5, .heading-5{
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.18px;
+}
+
+h6, .heading-6{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+p, .marked-list, .list{
+	a:hover{
+        text-decoration: none;
+    }
+
+    .fa{
+    	text-decoration: none;
+    }
+}
+
+em {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -3.5px;
+    display: inline-block;
+
+    @media (min-width: $screen-xs-min) {
+        font-size: 70px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        font-size: 80px;
+    }
+
+    @media (min-width: $screen-md-min) {
+        font-size: 95px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        font-size: 110px;
+    }
+}
+
+p {
+    letter-spacing: 0.32px;
+}
+
+a {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover{
+        color: $secondary-color;
+    }
+
+    &:focus{
+        outline: none;
+    }
+
+    &:active{
+        background-color: transparent;
+    }
+
+    @include transition(.3s);
+}
+
+a[href^="tel:"],
+a[href^="callto:"] {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover{
+        color: $secondary-color;
+    }
+
+    &:active{
+        background-color: transparent;
+    }
+}
+
+strong {
+    font-weight: 700;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.fa{
+	line-height: inherit;
+}
+
+[class*='fa-']{
+    &:before{
+        font-weight: 400;
+    	font-family: $fa;
+    }     
+}
+
+.page {
+    overflow: hidden;
+    min-height: 500px;
+    max-width: 1270px;
+    background: $white;
+    margin-right: auto;
+    margin-left: auto;
+
+    .lt-ie9 & {
+        min-width: 1200px;
+    }
+}
+
+.big {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-sm-min) {
+        font-size: 70px;
+        line-height: 0.4;
+    }
+
+    @media (min-width: $screen-md-min) {
+        font-size: 250px;
+        letter-spacing: -8.5px;
+        line-height: 0.67;
+    }
+}
+
+/*=======================================================
+                       Main Layout
+=========================================================*/
+
+* + h1 { margin-top: 71px }
+* + p { margin-top: 14px; }
+* + em { margin-top: 27px }
+* + time { margin-top: 16px; }
+* + .quote { margin-top: 42px; }
+
+h1 + p { margin-top: 50px; }
+p + p { margin-top: 24px; }
+h3 + article { margin-top: 48px; }
+article + article { margin-top: 49px;}
+
+dd + dd { margin-top: 25px; }
+
+time + .heading-5 { margin-top: 6px; }
+p + .marked-list { margin-top: 14px; }
+
+* + .row { margin-top: 49px; }
+.row + .row { margin-top: 55px; }
+
+* + .owl-carousel {
+    margin-top: 65px;
+
+    @media (min-width: $screen-sm-min) {
+        margin-top: 35px;
+    }
+}
+
+* + .big { margin-top: 46px; }
+* + .btn-md { margin-top: 58px; }
+
+* + .list {
+    margin-top: 34px;
+
+    @media (min-width: $screen-md-min) {
+        margin-top: 54px;
+    }
+}
+
+* + .contact-info {
+    margin-top: 36px;
+
+    @media (min-width: $screen-md-min) {
+        margin-top: 56px;
+    }
+}
+
+* + .contact-info-1 { margin-top: 42px; }
+* + .copyright { margin-top: 87px; }
+* + .contact-form { margin-top: 27px; }
+* + .link { margin-top: 40px; }
+
+img + h5 { margin-top: 33px; }
+h3 + img { margin-top: 49px; }
+h3 + .heading-5 { margin-top: 41px; }
+h3 + .box-md { margin-top: 42px; }
+img + .heading-5 { margin-top: 32px; }
+article + hr { margin-top: 48px; }
+
+p + p + .btn { margin-top: 43px; }
+h3 + dl > dt { margin-top: 44px; }
+article p + .btn { margin-top: 42px; }
+h3 + img + .heading-5 + p + .btn { margin-top: 42px; }
+
+.row + hr { margin-top: 76px; }
+.product .caption * + p { margin-top: 0px; }
+hr + article { margin-top: 65px; }
+.marked-list li + li { margin-top: 12px; }
+
+.row + .btn { margin-top: 53px; }
+.big + .btn { margin-top: 36px; }
+.btn + hr { margin-top: 78px; }
+.box-md + .box-md { margin-top: 45px; }
+.quote + .quote { margin-top: 45px; }
+
+* + .offset-1 { margin-bottom: 68px; }
+.row + .offset-2 { margin-top: 41px; }
+* + .offset-3 { margin-top: 43px; }
+article * + .offset-4 { margin-top: 11px; }
+* + .offset-5 { margin-top: 22px; }
+
+.prefix-1 { margin-left: -17px; }
+.prefix-2 { margin-left: -6px; }
+.prefix-3 { margin-left: 52px; }
+.prefix-4 { margin-left: 6px; }
+
+
+/*=======================================================
+                        Components
+=========================================================*/
+
+/*==================     Brand     ======================*/
+.brand {
+    float: none;
+    display: inline-block;
+
+    &_name{
+        position: relative;
+        letter-spacing: -0.2px;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 68px;
+        font-weight: 500;
+        color: $secondary-color;
+
+            &::after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "8";
+            color: map-get($scheme, primary);
+            font-size: 100px;
+            line-height: 73px;
+            width: 29px;
+            overflow: hidden;
+
+            @media (min-width: $screen-md-min) {  
+                position: absolute;              
+                top: 0;
+                left: 62px;                
+            }
+        }
+
+            &::before {
+            content: "8";
+            color: #efefef;
+            line-height: 60px;
+            font-size: 100px;
+            line-height: 73px;
+        }
+
+        @media (min-width: $screen-md-min) {  
+            padding-left: 61px;
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        display: inline-block;
+        float: left;
+    }
+}
+
+
+/*==================  Backgrounds  ======================*/
+
+.bg-primary{
+    background: map-get($scheme, primary);
+}
+
+.bg-secondary-color{
+    background: $secondary-color;
+}
+
+.bg-secondary-2 {
+    background: #363235;
+    color: $white;
+
+    h1, h2, h3, h4, h5, h6, 
+    .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+        color: $white;
+    }
+}
+
+.bg-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-fixed {
+    background-attachment: fixed;
+}
+
+.bg-image-1 {
+    background-image: url(../images/parallax1.jpg);
+}
+
+/*==================  Colors  ======================*/
+
+.primary-color {
+    color: map-get($scheme, primary);
+}
+
+.secondary-color-color {
+    color: $secondary-color;
+}
+
+.default-color {
+    color: white;
+
+    h1, h2, h3, h4, h5, h6, 
+    .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+        color: white;
+    }
+}
+
+/*==================     Flow Offset     ======================*/
+
+.flow-offset-1 {
+    [class^='col-'] {
+        &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+            margin-top: 30px;
+            @media (min-width: $screen-md-min) {
+                margin-top: 55px;
+            }
+        } 
+    }
+}
+
+/*==================     Icons     ======================*/
+
+.icon {
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.icon-xs {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+
+    @media (min-width: $screen-sm-min) {
+        font-size: 18px;
+    }
+}
+
+.icon-md {
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+    font-size: 26px;
+}
+
+.icon-primary {
+    background: map-get($scheme, primary);
+    color: $white;
+}
+
+.location {
+    position: relative;
+    padding-left: 30px;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }  
+}
+
+.location-phone {
+    position: relative;
+    padding-left: 26px;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+    } 
+}
+
+
+
+.fa-facebook,
+.fa-twitter,
+.fa-google-plus,
+.fa-linkedin{
+ 
+}
+
+/*==================        HR      =====================*/
+hr {
+    border: medium none;
+    width: 100%;
+    height: 1px;
+    background: #d2d3d3;
+    margin-left: 0px;
+    margin-left: auto;
+    margin-right: auto;
+
+  @media (min-width: $screen-md-min) {
+    margin-left: 0;
+  }
+}
+/*==================    Buttons    ======================*/
+.btn{
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 13px;
+    text-transform: uppercase;
+
+    &:hover{
+        background: map-get($scheme, primary);
+        transition: .4s;
+    }
+
+    &:active{
+        background: darken(map-get($scheme, primary), 10%);
+    }
+}
+
+.btn-md {
+    font-size: 12px;
+    padding-left: 35px;
+    padding-right: 35px;
+    letter-spacing: 0.25px;
+}
+
+.btn-sm {
+    font-size: 12px;
+    padding: 0 37px;
+    letter-spacing: 0.34px;
+}
+
+.btn-lg {
+    font-size: 16px;
+    padding: 10px 50px;
+    letter-spacing: 0.34px;
+}
+
+.btn-primary {
+    background: map-get($scheme, primary);
+    color: $white;
+    border: 1px solid map-get($scheme, primary);
+
+    &:hover{
+        background: rgba((map-get($scheme, primary)), 0);
+        border: 1px solid map-get($scheme, primary);
+        color: map-get($scheme, primary);
+    }
+
+    &:active{
+        background: darken(map-get($scheme, primary), 10%);
+    }
+
+    &--skin-1:hover{
+        border: 1px solid lighten(map-get($scheme, primary), 100%);
+        background: lighten(map-get($scheme, primary), 100%);
+    }
+}
+
+/*==================      List      ======================*/
+
+.link {
+    display: inline-block;
+    &:hover {
+        color: map-get($scheme, primary);
+    }
+}
+
+/*==================      List      ======================*/
+
+.list {
+    letter-spacing: 0.5px;
+    .active-footer {
+        a {
+            color: $secondary-color;
+        }
+    }
+}
+
+/*==================      Marked List      ======================*/
+
+.marked-list li{
+    position: relative;
+    padding-left: 23px;
+    font-size: 18px;
+    text-align: left;
+    letter-spacing: 0.36px;
+}
+
+.marked-list li:before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 3px;
+    top: 8px;
+    border-radius: 50%;
+    background: map-get($scheme, primary);
+}
+
+/*==================     Blog Post     ======================*/
+
+.blog-post {
+    time {
+        color: map-get($scheme, primary);
+        display: block;
+        font-size: 11px;
+        line-height: 20px;
+    }
+
+    .heading-3 {
+        font-size: 26px;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+        &:hover {
+            color: map-get($scheme, primary);
+        }
+        &:active {
+            color: $secondary-color;
+        }
+    }
+
+    @media (max-width: $screen-xs-min -1) {
+        .heading-5 {
+            display: block;
+        }
+    }
+}
+
+/*==================        Product      =====================*/
+
+.product {
+  padding: 0;
+  > img,
+  a > img {
+    margin-left: auto;
+    margin-right: auto;
+    @include transition(.5s all ease);
+  }
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 270px;
+
+  display: block;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+
+  // Image captions
+  .caption {
+    padding: 33px 27px;
+    background: map-get($scheme, primary);
+    h4 {
+      text-transform: uppercase;
+    }
+    * {
+      color: #fff;
+    }
+    p {
+      font-size: 13px;
+      letter-spacing: 0.26px;
+    }
+    position: relative;
+    z-index: 2;
+    color: $white;
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+  &:hover {
+    img {
+      @include transform(scale(1.1));
+    }
+  }
+}
+
+/*==================        Max Width      =====================*/
+
+.max-width {
+  max-width: 270px;
+}
+
+.max-width-2 {
+  max-width: 370px;
+}
+
+.max-width-3 {
+  max-width: 570px;
+}
+
+.max-width-4 {
+    width: 582px;
+}
+
+/*==================        Columns Indents      =====================*/
+
+[class^='col-'] {
+margin-top: 30px;
+
+    @media (min-width: $screen-md-min) {
+        margin-top: 0;
+    }
+}
+
+/*================  Text Alignment    ==================*/
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@mixin make-text-alignment($resolution){
+  .text-#{$resolution}-left {
+    text-align: left;
+  }
+
+  .text-#{$resolution}-center {
+    text-align: center;
+  }
+
+  .text-#{$resolution}-right {
+    text-align: right;
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  @include make-text-alignment("xs");
+}
+
+@media (min-width: $screen-sm-min) {
+  @include make-text-alignment("sm");
+}
+
+@media (min-width: $screen-md-min) {
+  @include make-text-alignment("md");
+}
+
+@media (min-width: $screen-lg-min) {
+  @include make-text-alignment("lg");
+}
+
+/*==================        Subscribe      =====================*/
+
+.subscribe {
+    padding-top: 42px;
+    padding-bottom: 19px;
+}
+
+/*==================        Blockquote      =====================*/
+
+.quote {
+    position: relative;
+    font-style: normal;
+    padding-left: 38px;
+
+    &::before{
+        position: absolute;
+        content: "“";
+        left: -2px;
+        top: 24px;
+        font-size: 72px;
+        color: map-get($scheme, primary);
+        font-weight: 500;
+    }
+
+    q {
+        letter-spacing: 0.32px;
+    }
+}
+
+/*==================     Contact Info     ======================*/
+
+.contact-info {
+    line-height: 18px;
+    display: inline-block;
+    letter-spacing: -0.6px;
+
+    * + dl {
+        margin-top: 25px;
+    }
+
+    dl dt {
+        float: none;
+        letter-spacing: 0.5px;
+
+        @media (min-width: $screen-lg-min) {
+            float: left;
+        }
+    }
+
+    dl dd {
+        float: none;
+        margin-left: 4px;
+        line-height: 19px;
+        letter-spacing: 0.32px;
+
+        @media (min-width: $screen-lg-min) {
+            float: right;
+        }
+    }
+
+    dd + dt {
+        clear: both;
+    }
+}
+
+.contact-info-1 {
+    line-height: 24px;
+    color: #4e5151;
+    display: inline-block;
+
+    * + dl {
+        margin-top: 10px;
+    }
+
+    dl dt {
+        float: left;
+    }
+
+    dl dd {
+        float: right;
+        margin-left: 18px;
+
+        &:last-child {
+            margin-left: 6px;
+            float: left;
+        }
+
+        a:hover {
+            color: map-get($scheme, primary);
+        }
+    }
+
+    dd + dt {
+        clear: both;
+    }
+}
+
+//==================    Imports    ======================
+
+@import "_thumb.scss";
+@import "_boxes.scss";
+@import "_parallax.scss";
+
+@import "_menu.scss";
+@import "_navbar.scss";
+@import "_stuck-menu.scss";
+@import "_to-top.scss";
+
+/*========================================================
+                     HEADER  Section
+=========================================================*/
+header {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 0;
+        background: $white;
+
+    .nav {
+        font-size: 17px;
+        float: none;
+        display: none;
+
+        @media (min-width: $screen-xs-min) {
+            display: none;
+        }
+
+        @media (min-width: $screen-sm-min) {
+            display: block;
+        }
+
+        @media (min-width: $screen-md-min) {
+            float: right;
+            line-height: 67px;
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    @media (min-width: $screen-md-min) {
+        padding-top: 59px;
+        padding-bottom: 58px;
+    }
+    
+}
+
+/*========================================================
+                     CONTENT  Section
+=========================================================*/
+
+main {
+    display: block;
+}
+
+/*==================      Well     ======================*/
+
+.well-xs {
+    padding-top: 23px;
+    padding-bottom: 48px;
+
+    @media (min-width: $screen-sm-min) {
+        padding-top: 53px;
+        padding-bottom: 78px;
+    }
+}
+
+.well-sm {
+    padding-top: 23px;
+    padding-bottom: 69px;
+
+    @media (min-width: $screen-sm-min) {
+        padding-top: 53px;
+        padding-bottom: 99px;
+    }
+
+    &--inset-1 {
+        padding-top: 60px;
+
+        @media (min-width: $screen-sm-min) {
+            padding-top: 90px;
+        }
+    }
+}
+
+.well-md {
+    padding-top: 40px;
+    padding-bottom: 44px;
+
+    @media (min-width: $screen-sm-min) {
+        padding-top: 70px;
+        padding-bottom: 74px;
+    }
+}
+
+.well-lg {
+    padding-top: 87px;
+    padding-bottom: 23px;
+
+    @media (min-width: $screen-sm-min) {
+        padding-top: 117px;
+        padding-bottom: 53px;
+    }
+}
+
+/*========================================================
+                     FOOTER  Styles
+=========================================================*/
+footer{
+    font-weight: 400;
+    color: $white;
+    background: map-get($scheme, primary);
+    text-transform: uppercase;
+    padding-top: 62px;
+    padding-bottom: 45px;
+    
+        h1, h2, h3, h4, h5, h6, 
+        .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+        color: $white;
+    }
+
+    .copyright {
+        line-height: 22px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        padding-top: 92px;
+        padding-bottom: 75px;
+    }
+}

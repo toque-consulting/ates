@@ -1,0 +1,30 @@
+/*==================  Stuck menu  ======================*/
+$stuck-bg: $white;
+$stuck-bc: map-get($scheme, primary);
+
+.stuck_container {
+
+}
+
+.isStuck {
+  background: $stuck-bg;
+  z-index: 999;
+  box-shadow: 0px 1px 2px #BBB;
+  left: 0px;
+  padding-bottom: 5px;
+  padding-top: 30px;
+
+  @media (min-width: $screen-md-min) {
+  	padding-top: 0;
+  }
+
+  .brand .brand_name::before, .brand_name::after {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 979px) {
+  .isStuck {
+    display: none !important;
+  }
+}

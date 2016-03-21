@@ -1,0 +1,109 @@
+/*==================     Box     ======================*/
+$box-gutter: 30px;
+
+.box{
+
+}
+
+.box, .box-xs, .box-sm, .box-md, .box-lg{
+  .box__middle {
+    vertical-align: middle;
+  }
+
+  .box__bottom {
+    vertical-align: bottom;
+  }
+}
+
+.box{
+  .box_left img, .box_right img{
+    max-width: none;
+  }
+
+  .box_left,
+  .box_right,
+  .box_cnt {
+    padding: 0;
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .box_left{
+    padding-right: $box-gutter;
+  }
+
+  .box_right{
+    padding-left: $box-gutter;
+  }
+}
+
+.box-xs, .box-sm, .box-md, .box-lg{
+  .box_left{
+    padding-bottom: $box-gutter;
+  }
+
+  .box_right{
+    padding-top: $box-gutter;
+  }
+}
+
+@mixin make-box($resolution){
+  .box-#{$resolution}{
+    .box_left img, .box_right img{
+      max-width: none;
+    }
+
+    .box_left,
+    .box_right,
+    .box_cnt {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .box_left{
+      padding-right: $box-gutter;
+    }
+
+    .box_right{
+      padding-left: $box-gutter;
+    }
+  }
+
+  .box-#{$resolution}-clear{
+    .box_left img, .box_right img{
+      max-width: 100%;
+    }
+
+    .box_left,
+    .box_right,
+    .box_cnt {
+      padding: 0;
+      display: block;
+      vert-align: top;
+    }
+
+    .box_left{
+      padding-bottom: $box-gutter;
+    }
+
+    .box_right{
+      padding-top: $box-gutter;
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  @include make-box("xs");
+}
+
+@media (min-width: $screen-sm-min) {
+  @include make-box("sm");
+}
+
+@media (min-width: $screen-md-min) {
+  @include make-box("md");
+}
+
+@media (min-width: $screen-lg-min) {
+  @include make-box("lg");
+}

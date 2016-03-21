@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contacts</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Links -->
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/google-map.css"/>
+    <link rel="stylesheet" href="css/mailform.css"/>
+    <!-- END Links -->
+
+    <!-- JS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+    <!-- END JS -->
+
+    <!--[if lt IE 9]>
+    <html class="lt-ie9">
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src='js/device.min.js'></script>
+</head>
+<body>
+<div class="page text-center text-md-left">
+
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+
+    <header>
+        <div id="stuck_container" class="stuck_container">
+            <div class="container">
+                <div class="brand">
+                    <div class="brand_name">
+                        <a href="./">exclusive motors</a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <ul class="sf-menu" data-type="navbar">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="index-1.html">About</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Quisque nulla</a>
+                                </li>
+                                <li>
+                                    <a href="#">Vestibulum libero</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Lorem</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Dolor</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sit amet</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Vivamus eget nibh</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="index-2.html">Folio</a>
+                        </li>
+                        <li>
+                            <a href="index-3.html">Services</a>
+                        </li>
+                        <li class="active">
+                            <a href="index-4.html">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- END Navigation -->
+
+            </div>
+        </div>
+    </header>
+
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+
+    <main>
+
+        <!-- CONTACT US -->
+        <section class="well-md bg-secondary-2">
+            <div class="container">
+                <h3>contact us</h3>
+            </div>
+        </section>
+        <!-- END CONTACT US -->
+
+        <!-- Google Maps -->
+        <div id="map" class="map">
+            <div id="google-map" class="map__mod"></div>
+            <ul class="map_locations">
+                <li data-x="-73.9874068" data-y="40.643180">
+                    <p>9870 St Vincent Place, Glasgow, DC 45 Fr 45. <span>800 2345-6789</span></p>
+                </li>
+            </ul>
+        </div>
+        <!-- END Google Maps -->
+
+        <!-- Contact Form -->
+        <section class="well-md">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="2s">
+                        <h3>address</h3>
+
+                        <!-- Contact Info -->
+                        <address class="contact-info-1">
+                            <span class="heading-5 medium">8901 Marmora Road,<br> Glasgow, D04 89GR.</span>
+                            <dl>
+                                <dt>Freephone:</dt>
+                                <dd>
+                                    <a href="callto:#"> +1 800 559 6580 </a>
+                                </dd>
+                                <dt>Telephone:</dt>
+                                <dd>
+                                    <a href="callto:#"> +1 800 603 6035 </a>
+                                </dd>
+                                <dt>FAX:</dt>
+                                <dd>
+                                    <a href="callto:#"> +1 800 889 9898 </a>
+                                </dd>
+                                <dt>E-mail:</dt>
+                                <dd>
+                                    <a href="mailto:mail@demolink.org"> mail@demolink.org </a>
+                                </dd>
+                            </dl>
+                        </address>
+                        <!-- END Contact Info -->
+
+                    </div>
+                    <div class="col-md-8 wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
+                        <h3>get in touch</h3>
+
+                        <div class="contact-form">
+                            <form class='mailform' method="post" action="bat/rd-mailform.php">
+                                <input type="hidden" name="form-type" value="contact"/>
+                                <fieldset>
+                                    <label data-add-placeholder="">
+                                        <input type="text"
+                                               name="name"
+                                               placeholder="Name*"
+                                               data-constraints="@LettersOnly @NotEmpty"/>
+                                    </label>
+
+                                    <label data-add-placeholder="">
+                                        <input type="text"
+                                               name="email"
+                                               placeholder="E-mail*"
+                                               data-constraints="@Email @NotEmpty"/>
+                                    </label>
+
+                                    <label data-add-placeholder="">
+                                        <input type="text"
+                                               name="phone"
+                                               placeholder="Telephone"
+                                               data-constraints="@Phone"/>
+                                    </label>
+
+                                    <label data-add-placeholder="">
+                                        <textarea name="message" placeholder="Message*"
+                                                  data-constraints="@NotEmpty"></textarea>
+                                    </label>
+
+                                    <div class="mfControls">
+                                        <button class="btn btn-sm btn-primary" type="submit">Send</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END Contact Form -->
+
+    </main>
+
+    <!--========================================================
+                              FOOTER
+    =========================================================-->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-3 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                    <h3>NAVIGATION</h3>
+
+                    <!-- Navigation List -->
+                    <ul class="list">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="index-1.html">ABOUT</a></li>
+                        <li><a href="index-2.html">folio</a></li>
+                        <li><a href="index-3.html">Services</a></li>
+                        <li class="active-footer"><a href="index-4.html">CONTACTS</a></li>
+                    </ul>
+                    <!-- END Navigation List -->
+
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
+                    <h3>FOR MEMBERS</h3>
+
+                    <!-- For Members List -->
+                    <ul class="list">
+                        <li><a href="#">FORUMS</a></li>
+                        <li><a href="#">PROMOTIONS</a></li>
+                        <li><a href="#">SIGN IN</a></li>
+                        <li><a href="#">NEWS</a></li>
+                    </ul>
+                    <!-- END For Members List -->
+
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-xs-clear col-md-release wow fadeIn" data-wow-duration="2s"
+                     data-wow-delay="0.6s">
+                    <h3>FOLLOW US</h3>
+
+                    <!-- Follow Us List -->
+                    <ul class="list">
+                        <li><a href="#">TWITTER</a></li>
+                        <li><a href="#">FACEBOOK</a></li>
+                        <li><a href="#">RSS</a></li>
+                    </ul>
+                    <!-- END Follow Us List -->
+
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.8s">
+                    <h3>OUR LOCATION</h3>
+
+                    <!-- Contact Info -->
+                    <address class="contact-info">
+                        9870 ST VINCENT PLACE,<br> GLASGOW, DC 45 FR 45.
+                        <dl>
+                            <dt>Telephone:</dt>
+                            <dd>
+                                <a href="callto:#">+1 800 603 6035</a>
+                            </dd>
+                            <dt>FAX:</dt>
+                            <dd>
+                                <a href="callto:#">+1 800 889 9898</a>
+                            </dd>
+                        </dl>
+                    </address>
+                    <!-- END Contact Info -->
+
+                </div>
+            </div>
+            <p class="copyright">
+                8 Exclusive Motors &#169; <span id="copyright-year"></span> &middot;
+                <a href="index-5.html">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

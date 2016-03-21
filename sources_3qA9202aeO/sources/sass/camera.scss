@@ -1,0 +1,294 @@
+﻿/*========================================================
+                        Camera
+=========================================================*/
+@import "_mixins.scss";
+@import "_variables.scss";
+
+$minHeight: 300px;
+$ratio: 0.651181;
+$scheme: nth($schemes,1);
+
+.camera_container {
+  position: relative;
+  padding-bottom: ($ratio * 100%);
+}
+
+@media (max-width: ($minHeight / $ratio)) {
+  .camera_container {
+    padding-bottom: $minHeight;
+  }
+}
+
+@mixin camera-abs() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.camera_wrap {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin-bottom: 0 !important;
+  height: 100%;
+  background: #fff;
+  z-index: 0;
+}
+
+.camera_wrap img {
+  max-width: none !important;
+}
+
+.camera_fakehover {
+  height: 100%;
+  min-height: 60px;
+  position: relative;
+  width: 100%;
+}
+
+.camera_src {
+  display: none;
+}
+
+.cameraCont, .cameraContents {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.cameraSlide {
+  @include camera-abs();
+}
+
+.cameraContent {
+  @include camera-abs();
+  display: none;
+}
+
+.camera_target {
+  @include camera-abs();
+  overflow: hidden;
+  text-align: left;
+  z-index: 0;
+}
+
+.camera_overlayer {
+  @include camera-abs();
+  overflow: hidden;
+  z-index: 0;
+}
+
+.camera_target_content {
+  @include camera-abs();
+  overflow: hidden;
+  z-index: 2;
+}
+
+.camera_loader {
+  background: #fff url(../images/camera-loader.gif) no-repeat center;
+  border: 1px solid #ffffff;
+  border-radius: 18px;
+  height: 36px;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  margin: -18px 0 0 -18px;
+  top: 50%;
+  width: 36px;
+  z-index: 3;
+}
+
+.camera_nav_cont {
+  height: 65px;
+  overflow: hidden;
+  position: absolute;
+  right: 9px;
+  top: 15px;
+  width: 120px;
+  z-index: 4;
+}
+
+.camerarelative {
+  overflow: hidden;
+  position: relative;
+}
+
+.imgFake {
+  cursor: pointer;
+}
+
+.camera_command_wrap .hideNav {
+  display: none;
+}
+
+.camera_command_wrap {
+  left: 0;
+  position: relative;
+  right: 0;
+  z-index: 4;
+}
+
+.showIt {
+  display: none;
+}
+
+.camera_clear {
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: -1px 0 25px;
+  position: relative;
+}
+
+.camera_caption {
+  display: none;
+  top: 12%;
+
+  @media (min-width: 480px) and (max-width: 768px) {
+    top: 15%;
+  }
+
+  @media (min-width: 768px) {
+    top: 30%;
+  }
+}
+
+
+
+.cameraContent .camera_caption {
+  display: block;
+}
+
+/*================   Custom Layout&Styles   =====================*/
+
+.camera_caption {
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  color: $white;
+
+  > div {
+    height: 100%;
+  }
+
+    h1, h2, h3, h4, h5, h6, 
+    .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+      color: $white;
+  }
+}
+
+.camera_pag {
+  &_ul {
+    text-align: center;
+
+    li {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      line-height: 8px;
+      text-align: center;
+      cursor: pointer;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background: #888;
+      @include transition(.3s all ease);
+
+      &.cameracurrent, &:hover {
+        background: #333;
+      }
+
+      & + li {       
+        margin-left: 4px;  
+      }
+
+      > span {
+        display: none;
+      }
+    }
+  }
+}
+
+.camera_nav {
+  z-index: 99;
+  position: absolute;
+  top: 77.4%;
+  left: 50px;
+  margin-left: 50px;
+  @media (max-width: 1300px) {
+    margin-top: 30px;
+    left:50%;
+    margin-left: 0;
+      transform: translateX(-50%);
+  }
+}
+
+.camera_next, .camera_prev {
+  position: absolute;
+  display: inline-block;
+  z-index: 10;
+  transition: all 0.3s;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  line-height:44px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  text-align: center;
+  &:before {
+    text-align: center;
+    font-family: $fa;
+    color: $white;
+    transition: all 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background: rgba(#fff, 0);
+    border-radius: 50%;
+    
+  }
+}
+
+.camera_next {
+  &:before {
+    content: '\f054';
+  }
+  left: 100%;
+  margin-left: 3px;
+}
+
+.camera_prev {
+  &:before {
+    content: '\f053';
+  }
+  right: 100%;
+  margin-right: 3px;
+}
+
+.camera_next:hover, .camera_prev:hover {
+  border-color: map-get($scheme, primary);
+}
+
+.camera_next:hover:before, .camera_prev:hover:before {
+  color: map-get($scheme, primary);
+}
+
+@media (max-width: 767px) {
+  .camera_next, .camera_prev {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .camera_caption {
+    text-align: center;
+    margin-left: 0px;
+  }
+}

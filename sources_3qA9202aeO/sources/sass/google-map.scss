@@ -1,0 +1,51 @@
+/*==================  GOOGLE MAP  ======================*/
+$map-height: 508px;
+$map-height-1: 481px;
+$map-height-767: 250px;
+$map-height-479: 200px;
+
+.map {
+  &_model{
+    height: $map-height;
+
+    img {
+      max-width: none !important;
+    }
+
+    @media (max-width: 767px) {
+      height: $map-height-767;
+    }
+
+    @media (max-width: 479px) {
+      height: $map-height-479;
+    }
+  }
+
+  &_locations{
+    display: none;
+  }
+}
+
+.map {
+  &__mod{
+    height: $map-height-1;
+
+    img {
+      max-width: none !important;
+    }
+
+    @media (max-width: 767px) {
+      height: $map-height-767;
+    }
+
+    @media (max-width: 479px) {
+      height: $map-height-479;
+    }
+  }
+
+  &_locations{
+    display: none;
+  }
+}
+
+

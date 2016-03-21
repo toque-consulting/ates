@@ -1,0 +1,28 @@
+/*==================  GOOGLE MAP  ======================*/
+.map_model {
+  height: 508px; }
+  .map_model img {
+    max-width: none !important; }
+  @media (max-width: 767px) {
+    .map_model {
+      height: 250px; } }
+  @media (max-width: 479px) {
+    .map_model {
+      height: 200px; } }
+.map_locations {
+  display: none; }
+
+.map__mod {
+  height: 481px; }
+  .map__mod img {
+    max-width: none !important; }
+  @media (max-width: 767px) {
+    .map__mod {
+      height: 250px; } }
+  @media (max-width: 479px) {
+    .map__mod {
+      height: 200px; } }
+.map_locations {
+  display: none; }
+
+/*# sourceMappingURL=google-map.css.map */

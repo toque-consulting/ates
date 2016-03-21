@@ -1,0 +1,37 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+$scheme-1: (
+    primary: #ff4754
+);
+
+$scheme-2: (
+    primary: #ffc478
+);
+
+$scheme-3: (
+    primary: #019081
+);
+
+$scheme-4: (
+    primary: #68848b
+);
+
+$scheme-5: (
+    primary: #e95d35
+);
+
+$schemes: ($scheme-1, $scheme-2, $scheme-3, $scheme-4, $scheme-5);
+
+//Colors
+$white: #fff;
+$secondary-color: #2a2d2d;
+
+//Screens
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+$default-font: 'Roboto', sans-serif;
