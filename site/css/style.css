@@ -701,6 +701,21 @@ hr {
     color: #2a2d2d;
 }
 
+.social.list a,
+.social.list i {
+    vertical-align: middle;
+
+}
+.social.list li {
+    padding: 10px 0;
+}
+
+.social.list i {
+    width: 50px;
+    text-align: center;
+}
+
+
 /*==================      Marked List      ======================*/
 .marked-list li {
     position: relative;
