@@ -122,6 +122,13 @@ p {
     letter-spacing: 0.32px;
 }
 
+p > em {
+    font-size: 1em;
+    font-weight: lighter;
+    letter-spacing: normal;
+    font-style: italic;
+}
+
 a {
     font: inherit;
     color: inherit;
