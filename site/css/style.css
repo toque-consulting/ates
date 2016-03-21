@@ -1878,5 +1878,16 @@ footer .copyright {
 }
 
 
+/*========================================================
+                     MISC  Styles
+=========================================================*/
+
+@media (min-width: 758px) {
+
+  .videothing {
+    margin-top: 100px;
+  }
+}
+
 
 /*# sourceMappingURL=style.css.map */
