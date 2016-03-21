@@ -679,9 +679,13 @@ hr {
     background: white;
 }
 
-/*==================      List      ======================*/
+/*==================      Link      ======================*/
 .link {
     display: inline-block;
+}
+
+.link-blue {
+    color: HSL(210,70%,60%)!important;
 }
 
 .link:hover {
