@@ -1714,6 +1714,13 @@ hr {
     height: 68px;
 }
 
+.brand-description {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 0.7em;
+    margin-left: 10px;
+}
+
 @media only screen and (max-width: 979px) {
     .isStuck {
         display: none !important;
