@@ -862,6 +862,10 @@ hr {
     transform: scale(1.1);
 }
 
+.focusgroup p {
+  font-size: 10px;
+}
+
 /*==================        Max Width      =====================*/
 .max-width {
     max-width: 270px;
