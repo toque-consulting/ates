@@ -1761,7 +1761,7 @@ hr {
 .brand-description {
     position: absolute;
     white-space: nowrap;
-    font-size: 0.8em;
+    font-size: 0.98em;
     margin-left: 10px;
 }
 
@@ -1773,7 +1773,7 @@ hr {
 .brand-company {
     position: absolute;
     white-space: nowrap;
-    font-size: 0.43em;
+    font-size: 0.68em;
     font-weight: 400;
     letter-spacing: 2px;
     margin-left: -120px;
