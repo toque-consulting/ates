@@ -1761,12 +1761,13 @@ hr {
 .brand-description {
     position: absolute;
     white-space: nowrap;
-    font-size: 0.7em;
+    font-size: 0.8em;
     margin-left: 10px;
 }
 
 .isStuck .brand-description{
     bottom: 34px;
+    font-size: 0.7em;
 }
 
 .brand-company {
