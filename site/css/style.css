@@ -82,6 +82,11 @@ h6, .heading-6 {
     font-size: 16px;
     font-weight: 500;
 }
+@media(max-width: 720px){
+  p {
+    text-align: justify;
+  }
+}
 
 p a:hover, .marked-list a:hover, .list a:hover {
     text-decoration: none;
