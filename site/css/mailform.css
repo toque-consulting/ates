@@ -95,14 +95,14 @@
     width: 100%; }
     @media (min-width: 1200px) {
       .contact-form .mailform label:first-child {
-        width: 32%; } }
+        width: 100%; } }
   .contact-form .mailform label:nth-child(2), .contact-form .mailform label:nth-child(3) {
-    display: inline-block;
+
     width: 100%; }
     @media (min-width: 1200px) {
       .contact-form .mailform label:nth-child(2), .contact-form .mailform label:nth-child(3) {
-        width: 31%;
-        margin-left: 18px; } }
+        width: 100%;
+         } }
   @media (min-width: 992px) {
     .contact-form .mailform {
       text-align: left; } }

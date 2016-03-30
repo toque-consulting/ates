@@ -74,6 +74,10 @@ h5, .heading-5 {
     letter-spacing: 0.18px;
 }
 
+.heading-5.addresses{
+    font-size:15px;
+}
+
 h6, .heading-6 {
     font-size: 16px;
     font-weight: 500;
@@ -1712,6 +1716,17 @@ hr {
     line-height: 0;
     font-size: 90px;
     height: 68px;
+}
+
+.brand-description {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 0.7em;
+    margin-left: 10px;
+}
+
+.isStuck .brand-description{
+    bottom: 34px;
 }
 
 @media only screen and (max-width: 979px) {
