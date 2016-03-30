@@ -1769,6 +1769,18 @@ hr {
     bottom: 34px;
 }
 
+.brand-company {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 0.43em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-left: -120px;
+    margin-top: -58px;
+    color: hsl(0,0%,65%);
+
+}
+
 @media only screen and (max-width: 979px) {
     .isStuck {
         display: none !important;
