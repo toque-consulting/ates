@@ -359,6 +359,12 @@ p + .marked-list {
     margin-top: 19px;
 }
 
+@media (max-width:767px){
+    .container h3 {
+        padding-top: 43px;
+    }
+}
+
 .row + .row {
     margin-top: 55px;
 }
