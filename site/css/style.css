@@ -82,11 +82,11 @@ h6, .heading-6 {
     font-size: 16px;
     font-weight: 500;
 }
-@media(max-width: 720px){
-  p {
-    text-align: justify;
-  }
+
+p {
+text-align: left;
 }
+
 
 p a:hover, .marked-list a:hover, .list a:hover {
     text-decoration: none;
@@ -356,7 +356,7 @@ p + .marked-list {
 }
 
 * + .row {
-    margin-top: 49px;
+    margin-top: 19px;
 }
 
 .row + .row {
@@ -401,8 +401,16 @@ p + .marked-list {
     }
 }
 
-* + .contact-info-1 {
+ .contact-info-1 {
     margin-top: 42px;
+
+}
+
+@media (max-width:719px){
+    .contact-info-1{
+
+        text-align: center;
+    }
 }
 
 * + .copyright {
@@ -554,7 +562,7 @@ article * + .offset-4 {
 }
 
 .brand-image {
-    width: 40%;
+    width: 80%;
     max-width: 208px;
 }
 
@@ -776,6 +784,8 @@ hr {
 
 .link-blue {
     color: HSL(210,70%,60%)!important;
+    padding-top: 24px;
+    display: inline-block;
 }
 
 .link:hover {
@@ -1717,7 +1727,7 @@ hr {
 .rd-mobilepanel_toggle span:after, .rd-mobilepanel_toggle span:before, .rd-mobilepanel_toggle span {
     width: 24px;
     height: 4px;
-    background-color: #ff4754;
+    background-color: #444444;
     backface-visibility: hidden;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -1815,10 +1825,11 @@ hr {
     white-space: nowrap;
     font-size: 0.98em;
     margin-left: 10px;
+    margin-top: 13px;
 }
 
 .isStuck .brand-description{
-    bottom: 34px;
+    bottom: 44px;
     font-size: 0.7em;
 }
 
@@ -1859,6 +1870,29 @@ hr {
         display: block;
         margin: 30px auto;
 
+    }
+
+    .isStuck .brand-image{
+        display:inline-block;
+        max-width: 150px;
+        margin: 0;
+    }
+
+    .isStuck .brand-company {
+        top: -14px;
+        left: -153px;
+        margin: 0;
+    }
+
+    .isStuck .brand-description{
+        margin-bottom: 0;
+        display:inline-block;
+        top: -55px;
+        left: -30px;
+    }
+
+    .isStuck .nav {
+        padding-bottom: 30px;
     }
 
 }
@@ -1933,7 +1967,7 @@ header .nav {
 @media (min-width: 992px) {
     header .nav {
         float: right;
-        line-height: 67px;
+        line-height: 100px;
     }
 }
 
@@ -2045,21 +2079,27 @@ footer .copyright {
     }
 }
 
+@media (max-width:993px) {
+    footer .copyright{
+        text-align: center;
+    }
+}
+
 
 /*========================================================
                      MISC  Styles
 =========================================================*/
 
 .videothing {
-   margin-top: 40px;
-   height: 50%;
+   margin-top: 30px;
+   height: 60vh;
 }
 
 @media (min-width: 758px) {
 
   .videothing {
-    margin-top: 100px;
-    height: 80%;
+    margin-top: 42px;
+    height: 80vh;
   }
 }
 
