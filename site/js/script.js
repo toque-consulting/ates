@@ -253,3 +253,10 @@ var o = $('#camera');
     });
 });
 
+// Close mobile menu on menu selection
+;$(function() {
+    $(document).on('click','.rd-mobilemenu a',function() {
+      $('button.rd-mobilepanel_toggle').click();
+    });
+});
+
