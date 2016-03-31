@@ -49,7 +49,7 @@
                     }).append($('<span/>')))
                     .append($('<h2/>', {
                         'class': settings.titleClass,
-                        'text': document.title
+                        'html': '<img class="nav-brand-image" src="images/main-logo-grey.png">'
                     })));
         },
 
