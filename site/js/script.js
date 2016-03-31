@@ -258,5 +258,11 @@ var o = $('#camera');
     $(document).on('click','.rd-mobilemenu a',function() {
       $('button.rd-mobilepanel_toggle').click();
     });
+    $(document).on('tap','.rd-mobilemenu a',function() {
+        $('button.rd-mobilepanel_toggle').trigger('tap');
+    });
+    $(document).on('touchstart','.rd-mobilemenu a',function() {
+        $('button.rd-mobilepanel_toggle').trigger('touchstart');
+    });
 });
 
