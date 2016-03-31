@@ -211,7 +211,7 @@ strong {
 }
 
 .big {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -1835,14 +1835,23 @@ hr {
 
 .brand-company {
     position: absolute;
-    white-space: nowrap;
-    font-size: 0.68em;
+    font-size: 0.48em;
     font-weight: 400;
     letter-spacing: 2px;
-    margin-left: -120px;
+    margin-left: -163px;
     margin-top: -58px;
     color: hsl(0,0%,65%);
 
+}
+
+
+
+@media only screen and (min-width: 462px) {
+    .brand-company {
+        white-space: nowrap;
+        font-size: 0.68em;
+
+    }
 }
 
 @media only screen and (max-width: 991px) {
@@ -1895,6 +1904,19 @@ hr {
         padding-bottom: 30px;
     }
 
+}
+
+@media (max-width:356px) {
+    .brand-company {
+        display: block;
+        line-height: 23px;
+        font-size: 0.58em;
+        margin-top: 41px;
+    }
+
+    .brand-description{
+        font-size: 0.8em;
+    }
 }
 
 @media only screen and (max-width: 979px) {
